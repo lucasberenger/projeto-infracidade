@@ -1,14 +1,33 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import Navbar from "@/components/landing/Navbar";
+import HeroSection from "@/components/landing/HeroSection";
+import WhatIsDataSection from "@/components/landing/WhatIsDataSection";
+import DataGoldSection from "@/components/landing/DataGoldSection";
+import DataDrivenSection from "@/components/landing/DataDrivenSection";
+import AppsSection from "@/components/landing/AppsSection";
+import IntelligenceSection from "@/components/landing/IntelligenceSection";
+import CtaSection from "@/components/landing/CtaSection";
+import Footer from "@/components/landing/Footer";
 
-const Index = () => {
-  return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
+const Index = () => (
+  <>
+    <Navbar />
+    <main>
+      <HeroSection />
+      <div id="conceito">
+        <WhatIsDataSection />
       </div>
-    </div>
-  );
-};
+      <DataGoldSection />
+      <div id="cultura">
+        <DataDrivenSection />
+      </div>
+      <div id="apps">
+        <AppsSection />
+      </div>
+      <IntelligenceSection />
+      <CtaSection />
+    </main>
+    <Footer />
+  </>
+);
 
 export default Index;
