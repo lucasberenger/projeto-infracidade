@@ -10,7 +10,7 @@ const Navbar = () => {
       <div className="container flex items-center justify-between h-16">
         <div className="flex items-center gap-2 font-display font-bold text-xl">
           <BarChart3 className="h-6 w-6 text-primary" />
-          <span>DataGov</span>
+          <span>InfraCidade</span>
         </div>
 
         <div className="hidden md:flex items-center gap-8 text-sm font-medium text-muted-foreground">

@@ -5,9 +5,9 @@ const Footer = () => (
     <div className="container flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
       <div className="flex items-center gap-2 font-display font-semibold text-foreground">
         <BarChart3 className="h-5 w-5 text-primary" />
-        DataGov
+        InfraCidade
       </div>
-      <p>© {new Date().getFullYear()} DataGov. Todos os direitos reservados.</p>
+      <p>© {new Date().getFullYear()} InfraCidade. Todos os direitos reservados.</p>
     </div>
   </footer>
 );

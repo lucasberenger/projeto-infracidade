@@ -1,30 +1,37 @@
 import { motion } from "framer-motion";
-import { ShieldAlert, HeartPulse, GraduationCap, MapPin, Activity, BookOpen } from "lucide-react";
+import {
+  ShieldAlert,
+  Camera,
+  BarChart3,
+  HeartPulse,
+  AlertTriangle,
+  Eye,
+  Clock,
+  Thermometer,
+  Activity,
+  Users,
+} from "lucide-react";
 
-const apps = [
+const features = [
   {
-    icon: ShieldAlert,
-    title: "Registro de incidentes urbanos",
-    desc: "Cidadãos reportam acidentes, roubos, problemas de trânsito e ocorrências pela cidade em tempo real.",
-    data: "Gera dados de localização, frequência e tipo de incidentes — permitindo mapear áreas críticas e alocar recursos com precisão.",
-    dataIcon: MapPin,
-    color: "from-primary to-blue-400",
+    icon: AlertTriangle,
+    title: "Reporte de Incidentes e Transparência",
+    desc: "A população alimenta o sistema em tempo real, notificando problemas de infraestrutura (buracos, iluminação, fiação), segurança (assaltos, vandalismo) e trânsito. Além de reportar, é possível visualizar as ocorrências registradas por outros usuários.",
+  },
+  {
+    icon: Camera,
+    title: "Monitoramento via IA",
+    desc: "Acesso a imagens em tempo real de câmeras inteligentes instaladas em locais estratégicos, permitindo acompanhar o fluxo e a segurança de diferentes regiões do município.",
+  },
+  {
+    icon: BarChart3,
+    title: "Central de Dados e Performance",
+    desc: "Dashboard de Frequência com gráficos dos problemas mais recorrentes em períodos mensais e anuais, além do Tempo Médio de Resolução — indicador de agilidade que mostra quanto tempo o Estado leva para solucionar cada tipo de ocorrência.",
   },
   {
     icon: HeartPulse,
-    title: "Saúde municipal",
-    desc: "Agendamento de consultas, acesso a exames, notificações de campanhas de vacinação e acompanhamento médico.",
-    data: "Gera dados sobre demanda por serviços, tempos de espera e perfil epidemiológico — melhorando o planejamento de saúde.",
-    dataIcon: Activity,
-    color: "from-primary to-blue-400",
-  },
-  {
-    icon: GraduationCap,
-    title: "Escolas municipais",
-    desc: "Comunicação entre escola e responsáveis, avisos, frequência, atividades escolares e acompanhamento do desempenho do aluno.",
-    data: "Gera indicadores educacionais importantes como evasão, rendimento e engajamento — fundamentais para políticas educacionais.",
-    dataIcon: BookOpen,
-    color: "from-primary to-blue-400",
+    title: "Indicadores de Bem-Estar",
+    desc: "Termômetro de Humor que mede o nível de satisfação da população e Indicador de Saúde da Região, um diagnóstico geral da qualidade de vida na localidade — tudo gerado a partir dos dados dos próprios cidadãos.",
   },
 ];
 
@@ -35,50 +42,61 @@ const AppsSection = () => (
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="text-center max-w-2xl mx-auto mb-16"
+        className="text-center max-w-3xl mx-auto mb-16"
       >
         <span className="text-sm font-semibold uppercase tracking-widest text-primary mb-3 block">
           Soluções práticas
         </span>
         <h2 className="text-3xl md:text-4xl font-bold mb-4">
-          Aplicativos como geradores de dados
+          Aplicativo InfraCidade: Participação Popular como Gerador de Dados
         </h2>
-        <p className="text-muted-foreground text-lg">
-          Aplicativos utilizados pelos cidadãos geram dados valiosíssimos para
-          a melhoria contínua da administração pública municipal.
+        <p className="text-muted-foreground text-lg leading-relaxed">
+          O objetivo principal é incentivar a participação popular na Ordem
+          Pública, disponibilizando uma ferramenta acessível e de fácil
+          utilização, para que a população contribua com o Município, zelando a
+          convivência social, a segurança e o bem-estar coletivo.
         </p>
       </motion.div>
 
-      <div className="space-y-8">
-        {apps.map((app, i) => (
+      {/* How it works */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="bg-card rounded-2xl shadow-sm p-8 md:p-10 mb-10"
+      >
+        <div className="flex items-center gap-3 mb-4">
+          <div className="w-10 h-10 rounded-lg gradient-primary flex items-center justify-center">
+            <Users className="h-5 w-5 text-primary-foreground" />
+          </div>
+          <h3 className="text-xl font-bold">Como funciona o aplicativo?</h3>
+        </div>
+        <p className="text-muted-foreground leading-relaxed max-w-3xl">
+          O InfraCidade é uma plataforma colaborativa que conecta o cidadão
+          diretamente ao Estado. Após a identificação (via Título de Eleitor ou
+          documentos oficiais), o usuário acessa um ecossistema de monitoramento
+          e zeladoria urbana com as seguintes funcionalidades:
+        </p>
+      </motion.div>
+
+      {/* Feature cards */}
+      <div className="grid md:grid-cols-2 gap-6">
+        {features.map((feat, i) => (
           <motion.div
-            key={app.title}
+            key={feat.title}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.1 }}
-            className="bg-card rounded-2xl shadow-sm overflow-hidden"
+            className="bg-card rounded-2xl shadow-sm p-8"
           >
-            <div className="grid md:grid-cols-2">
-              <div className="p-8 md:p-10">
-                <div className="w-12 h-12 rounded-xl gradient-primary flex items-center justify-center mb-5">
-                  <app.icon className="h-6 w-6 text-primary-foreground" />
-                </div>
-                <h3 className="text-2xl font-bold mb-3">{app.title}</h3>
-                <p className="text-muted-foreground leading-relaxed">{app.desc}</p>
-              </div>
-              <div className="p-8 md:p-10 bg-accent/50 flex items-center">
-                <div>
-                  <div className="flex items-center gap-2 mb-3">
-                    <app.dataIcon className="h-5 w-5 text-primary" />
-                    <span className="text-sm font-semibold text-primary uppercase tracking-wide">
-                      Dados gerados
-                    </span>
-                  </div>
-                  <p className="text-foreground/80 leading-relaxed">{app.data}</p>
-                </div>
-              </div>
+            <div className="w-12 h-12 rounded-xl gradient-primary flex items-center justify-center mb-5">
+              <feat.icon className="h-6 w-6 text-primary-foreground" />
             </div>
+            <h3 className="text-xl font-bold mb-3">{feat.title}</h3>
+            <p className="text-muted-foreground leading-relaxed">
+              {feat.desc}
+            </p>
           </motion.div>
         ))}
       </div>
