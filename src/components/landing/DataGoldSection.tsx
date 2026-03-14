@@ -14,7 +14,7 @@ const DataGoldSection = () => (
             Valor dos dados
           </span>
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Por que dizem que dados são o novo ouro?
+            Dados: o ouro digital
           </h2>
           <p className="text-muted-foreground text-lg leading-relaxed mb-6">
             Hoje, organizações de todos os setores tomam decisões baseadas em dados.
