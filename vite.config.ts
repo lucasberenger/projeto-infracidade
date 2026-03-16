@@ -5,10 +5,10 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
+  base: '/projeto-infracidade/',
   server: {
     host: "::",
     port: 8080,
-    base: '/projeto-infracidade/',
     hmr: {
       overlay: false,
     },
